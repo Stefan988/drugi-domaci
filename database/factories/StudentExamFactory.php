@@ -14,7 +14,9 @@ class StudentExamFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'student_id' => $this->faker->numberBetween(1, 12),
+            'exam_id' => $this->faker->numberBetween(1, 30),
+            'grade' => $this->faker->biasedNumberBetween(5, 10)
         ];
     }
 }
