@@ -9,9 +9,13 @@ class StudentExam extends Model
 {
     use HasFactory;
     protected $fillable = ['student_id', 'exam_id', 'grade'];
-
+    protected $with = ['exam', 'student'];
     public function exam()
     {
         return $this->belongsTo(Exam::class);
+    }
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
     }
 }
